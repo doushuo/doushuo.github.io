@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>IDEA 配置git</title>
+    <title>IDEA中Git常用操作</title>
     <url>/2024/08/04/IDEA%E4%B8%ADGit%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</url>
     <content><![CDATA[<h2 id="IDEA中配置git"><a href="#IDEA中配置git" class="headerlink" title="IDEA中配置git"></a>IDEA中配置git</h2><p><img src="/image/image-20240321230017176.png" alt="image-20240321230017176"></p>
 <h2 id="本地项目关联远程仓库"><a href="#本地项目关联远程仓库" class="headerlink" title="本地项目关联远程仓库"></a>本地项目关联远程仓库</h2><h3 id="命令操作"><a href="#命令操作" class="headerlink" title="命令操作"></a>命令操作</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 初始化本地项目</span></span></span><br><span class="line">git init </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 添加文件</span></span></span><br><span class="line">git add .</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 提交文件</span></span></span><br><span class="line">git commit -m &#x27;init: 项目初始化&#x27;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 关联远程仓库</span></span></span><br><span class="line">git remote add origin &#x27;远程仓库地址&#x27;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 推送到远程</span></span></span><br><span class="line">git push -u origin master</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 查看项目关联的远程仓库</span></span></span><br><span class="line">git remote -v </span><br></pre></td></tr></table></figure>
@@ -60,6 +60,12 @@
 <li><strong>revert</strong> 撤销某次提交</li>
 </ul>
 ]]></content>
+      <categories>
+        <category>IDEA</category>
+      </categories>
+      <tags>
+        <tag>IDEA, Docker</tag>
+      </tags>
   </entry>
   <entry>
     <title>Hello World</title>
@@ -83,6 +89,19 @@
       </categories>
       <tags>
         <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>IDEA中Git常用操作</title>
+    <url>/2024/08/04/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h2 id="docker-常用"><a href="#docker-常用" class="headerlink" title="docker 常用"></a>docker 常用</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 查看镜像</span></span><br><span class="line">docker images</span><br><span class="line"><span class="comment">## 查询安装的镜像</span></span><br><span class="line">docker search name</span><br><span class="line"><span class="comment">## 查看容器</span></span><br><span class="line">docker ps -a</span><br><span class="line"><span class="comment">## 重启容器</span></span><br><span class="line">docker restart containerID</span><br><span class="line"><span class="comment">## 停止</span></span><br><span class="line">docker stop  containerID</span><br><span class="line"><span class="comment">## 启动</span></span><br><span class="line">docker start containerID</span><br><span class="line"><span class="comment">## 删除</span></span><br><span class="line">docker <span class="built_in">rm</span> containerID</span><br><span class="line"><span class="comment">## 删除镜像</span></span><br><span class="line">docker rmi iamgeID</span><br><span class="line"><span class="comment">## 杀死</span></span><br><span class="line">docker <span class="built_in">kill</span> containerID </span><br><span class="line"></span><br><span class="line"><span class="comment">## 启动镜像</span></span><br><span class="line">docker run </span><br><span class="line"><span class="comment">## 进入容器</span></span><br><span class="line">docker <span class="built_in">exec</span> containerID -it /bin/bash</span><br><span class="line"><span class="comment">## 退出容器</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment">## 查看日志 -f 跟踪日志输出 -t显示时间戳 --tail 仅列出最新的n条容器日志</span></span><br><span class="line">docker logs -f --<span class="built_in">tail</span>=1000 containerID</span><br><span class="line"><span class="comment">## 查看日志</span></span><br><span class="line">docker logs --since=“2021-08-10” --<span class="built_in">tail</span>=10 redis</span><br><span class="line"></span><br><span class="line"><span class="comment">## 内存情况</span></span><br><span class="line"><span class="built_in">df</span> -lh</span><br><span class="line">docker system <span class="built_in">df</span> -v </span><br><span class="line"><span class="comment">## 查看状态</span></span><br><span class="line">docker status</span><br><span class="line"><span class="comment">## 复制容器文件</span></span><br><span class="line">dcoker <span class="built_in">cp</span> 容器<span class="built_in">id</span>:容器内路径 目的主机路径</span><br><span class="line"></span><br><span class="line"><span class="comment">## 打包镜像</span></span><br><span class="line">docker save -o 压缩文件名称：镜像名称：版本号</span><br><span class="line"><span class="comment">## 解压镜像</span></span><br><span class="line">docker load -i  压缩文件名称</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>docker</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
       </tags>
   </entry>
 </search>
