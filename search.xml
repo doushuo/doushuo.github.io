@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>IDEA 配置git</title>
+    <url>/2024/08/04/IDEA%E4%B8%ADGit%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<h2 id="IDEA中配置git"><a href="#IDEA中配置git" class="headerlink" title="IDEA中配置git"></a>IDEA中配置git</h2><p><img src="/image/image-20240321230017176.png" alt="image-20240321230017176"></p>
+<h2 id="本地项目关联远程仓库"><a href="#本地项目关联远程仓库" class="headerlink" title="本地项目关联远程仓库"></a>本地项目关联远程仓库</h2><h3 id="命令操作"><a href="#命令操作" class="headerlink" title="命令操作"></a>命令操作</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 初始化本地项目</span></span></span><br><span class="line">git init </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 添加文件</span></span></span><br><span class="line">git add .</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 提交文件</span></span></span><br><span class="line">git commit -m &#x27;init: 项目初始化&#x27;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 关联远程仓库</span></span></span><br><span class="line">git remote add origin &#x27;远程仓库地址&#x27;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 推送到远程</span></span></span><br><span class="line">git push -u origin master</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 查看项目关联的远程仓库</span></span></span><br><span class="line">git remote -v </span><br></pre></td></tr></table></figure>
+
+<h3 id="IDEA-操作"><a href="#IDEA-操作" class="headerlink" title="IDEA 操作"></a>IDEA 操作</h3><h4 id="创建git项目，初始化git项目"><a href="#创建git项目，初始化git项目" class="headerlink" title="创建git项目，初始化git项目"></a>创建git项目，初始化git项目</h4><p><img src="/../image/image-20240321230017176.png" alt="image-20240321230041442"></p>
+<h4 id="添加文件、提交文件"><a href="#添加文件、提交文件" class="headerlink" title="添加文件、提交文件"></a>添加文件、提交文件</h4><h4 id="设置远程仓库"><a href="#设置远程仓库" class="headerlink" title="设置远程仓库"></a>设置远程仓库</h4><p><img src="/../image/image-20240321230048414.png" alt="image-20240321230048414"></p>
+<p>第一次推送到远程会让添加一个远程仓库的地址</p>
+<p><img src="/image/image-20240321230059404.png" alt="image-20240321230059404"></p>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>初始化项目是记得提交 <code>.gitignore</code>文件到远程仓库中，之后 IDEA 自动忽略记录的文件</p>
+<p><img src="/image/image-20240321230116237.png" alt="image-20240321230116237"></p>
+<h2 id="IDEA替换远程仓库地址"><a href="#IDEA替换远程仓库地址" class="headerlink" title="IDEA替换远程仓库地址"></a>IDEA替换远程仓库地址</h2><h4 id="命令操作-1"><a href="#命令操作-1" class="headerlink" title="命令操作"></a>命令操作</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 查看关联的远程分支</span></span><br><span class="line">git remote -v</span><br><span class="line"><span class="comment">## </span></span><br><span class="line">git remote add &lt;remote-name&gt; &lt;remote-url&gt;</span><br><span class="line"><span class="comment">## 将 main 分支设置为跟踪新的远程分支</span></span><br><span class="line">git branch --set-upstream-to=origin/new-remote-branch main</span><br><span class="line"><span class="comment">## 允许合并两个不相关历史的分支</span></span><br><span class="line">git pull origin master --allow-unrelated-histories</span><br></pre></td></tr></table></figure>
+
+<h4 id="直接操作"><a href="#直接操作" class="headerlink" title="直接操作"></a>直接操作</h4><p>git -&gt; manage Rremotes</p>
+<p><img src="/image/image-20240321230953978.png" alt="image-20240321230953978"></p>
+<p>替换就可以了</p>
+<p><img src="/image/image-20240321231029224.png" alt="image-20240321231029224"></p>
+<h2 id="IDEA-直接拉取远程项目"><a href="#IDEA-直接拉取远程项目" class="headerlink" title="IDEA 直接拉取远程项目"></a>IDEA 直接拉取远程项目</h2><p><img src="/image/image-20240321230126443.png" alt="image-20240321230126443"></p>
+<p><img src="/image/image-20240321230137133.png" alt="image-20240321230137133"></p>
+<h2 id="IDEA-中Git-中常用操作"><a href="#IDEA-中Git-中常用操作" class="headerlink" title="IDEA 中Git 中常用操作"></a>IDEA 中Git 中常用操作</h2><h3 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h3><p>点击代码提交记录，选择某一个版本进行创建分支<br><img src="/image/image-20240321230147155.png" alt="image-20240321230147155"></p>
+<h3 id="创建版本号"><a href="#创建版本号" class="headerlink" title="创建版本号"></a>创建版本号</h3><p>选择代码提交记录中的一条记录进行版本号的创建<br><img src="/image/image-20240321230154894.png" alt="image-20240321230154894"></p>
+<h3 id="提交代码"><a href="#提交代码" class="headerlink" title="提交代码"></a>提交代码</h3><p>每次提交代码之前，最好先拉取远程仓库代码，防止冲突的发生，如果有冲突发生，可以对比代码进行代码合并之后，再进行代码的提交</p>
+<h3 id="代码回退"><a href="#代码回退" class="headerlink" title="代码回退"></a>代码回退</h3><p>reset 和 revert 都是可以进行代码的回退</p>
+<ul>
+<li>reset 是直接恢复到上一个提交，工作区的代码自然也恢复到上一次提交的代码，代码版本会比远程仓库的低，需要强制 push 才能推到远程上</li>
+<li>revert 是新增一个提交，但是这个提交是使用上一次的代码,可以保留错误代码之间的提交记录（建议使用）</li>
+</ul>
+<h4 id="reset-原理"><a href="#reset-原理" class="headerlink" title="reset 原理"></a>reset 原理</h4><p><img src="/image/image-20240321230203902.png" alt="image-20240321230203902"></p>
+<h4 id="revert-原理"><a href="#revert-原理" class="headerlink" title="revert 原理"></a>revert 原理</h4><p><img src="/image/image-20240321230210180.png" alt="image-20240321230210180"></p>
+<h2 id="Git-开发分支规范"><a href="#Git-开发分支规范" class="headerlink" title="Git 开发分支规范"></a>Git 开发分支规范</h2><ul>
+<li><strong>master</strong> 分支</li>
+</ul>
+<p> 线上分支，主分支，中小规模项目作为线上运行的应用对应的分支；  </p>
+<ul>
+<li>**develop **分支</li>
+</ul>
+<p>是从master创建的分支，一般作为开发部门的主要开发分支，如果没有其他并行开发不同期上线 要求，都可以在此版本进行开发，阶段开发完成后，需要是合并到master分支,准备上线。  </p>
+<ul>
+<li><strong>feature</strong> 分支</li>
+</ul>
+<p> 从develop创建的分支，一般是同期并行开发，但不同期上线时创建的分支，分支上的研发任务完 成后合并到develop分支  </p>
+<ul>
+<li><strong>hotfix</strong> 分支</li>
+</ul>
+<p> 从master派生的分支，一般作为线上bug修复使用，修复完成后需要合并到master、test、 develop分支。<br><img src="/image/image-20240321230219432.png" alt="image-20240321230219432"></p>
+<h2 id="Git-提交提示规范"><a href="#Git-提交提示规范" class="headerlink" title="Git 提交提示规范"></a>Git 提交提示规范</h2><ul>
+<li><strong>feat</strong> 新功能</li>
+<li><strong>fix</strong> 修复bug</li>
+<li><strong>docs</strong> 文档修改</li>
+<li><strong>style</strong> 格式变动</li>
+<li><strong>refactor</strong> 重构 </li>
+<li><strong>perf</strong> 提高性能的修改</li>
+<li><strong>test</strong> 添加修改测试代码</li>
+<li><strong>build</strong> 构建工具或者外部依赖包的修改</li>
+<li><strong>ci</strong> 持续集成的配置文件或脚本修改</li>
+<li><strong>chrone</strong> 杂项</li>
+<li><strong>revert</strong> 撤销某次提交</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2024/08/04/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+</search>
