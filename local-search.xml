@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>Mybatis-Plus中字段自动填充</title>
+    <link href="/2024/08/13/Mybatis-Plus%E8%87%AA%E5%8A%A8%E5%A1%AB%E5%85%85/"/>
+    <url>/2024/08/13/Mybatis-Plus%E8%87%AA%E5%8A%A8%E5%A1%AB%E5%85%85/</url>
+    
+    <content type="html"><![CDATA[<h2 id="SpringBoot-中配置字段填充"><a href="#SpringBoot-中配置字段填充" class="headerlink" title="SpringBoot 中配置字段填充"></a>SpringBoot 中配置字段填充</h2><ol><li>依赖</li></ol><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.baomidou<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>mybatis-plus-boot-starter<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>$&#123;mybatis-plus.version&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></td></tr></table></figure><ol start="2"><li>实体类添加注解</li></ol><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@TableField(fill = FieldFill.INSERT)</span> <span class="hljs-comment">//插入时填充字段</span><br><span class="hljs-keyword">private</span> Date createTime;<br><span class="hljs-meta">@TableField(fill = FieldFill.INSERT_UPDATE)</span><span class="hljs-comment">//插入和修改时填充字段</span><br><span class="hljs-keyword">private</span> Date updateTime;<br><br></code></pre></td></tr></table></figure><ol start="3"><li>填充规则</li></ol><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Slf4j</span><br><span class="hljs-meta">@Component</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyMetaObjectHandler</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">MetaObjectHandler</span> &#123;<br><br>    <span class="hljs-comment">//插入时的填充策略</span><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">insertFill</span><span class="hljs-params">(MetaObject metaObject)</span> &#123;<br>        log.info(<span class="hljs-string">&quot;start insert fill ....&quot;</span>);<br>        <span class="hljs-comment">//三个参数：字段名，字段值，元对象参数</span><br>        <span class="hljs-built_in">this</span>.setFieldValByName(<span class="hljs-string">&quot;createTime&quot;</span>,<span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(),metaObject);<br>        <span class="hljs-built_in">this</span>.setFieldValByName(<span class="hljs-string">&quot;updateTime&quot;</span>,<span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(),metaObject);<br>    &#125;<br>    <span class="hljs-comment">//修改时的填充策略</span><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">updateFill</span><span class="hljs-params">(MetaObject metaObject)</span> &#123;<br>        log.info(<span class="hljs-string">&quot;start update fill ....&quot;</span>);<br>        <span class="hljs-built_in">this</span>.setFieldValByName(<span class="hljs-string">&quot;updateTime&quot;</span>,<span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(),metaObject);<br>    &#125;<br>&#125;<br><br><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>mybatis-plus</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>mybatis-plus</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Docker常用命令</title>
     <link href="/2024/08/04/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
     <url>/2024/08/04/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
@@ -38,14 +63,14 @@
     
     <categories>
       
-      <category>IDEA</category>
+      <category>idea</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>IDEA, Docker</tag>
+      <tag>idea, docker</tag>
       
     </tags>
     

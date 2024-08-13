@@ -19,22 +19,22 @@
   <meta name="author" content="doushuo">
   <meta name="keywords" content="">
   
-    <meta name="description" content="docker 常用123456789101112131415161718192021222324252627282930313233343536373839404142## 查看镜像docker images## 查询安装的镜像docker search name## 查看容器docker ps -a## 重启容器docker restart containerID## 停止docker stop">
+    <meta name="description" content="SpringBoot 中配置字段填充 依赖  12345&lt;dependency&gt;    &lt;groupId&gt;com.baomidou&lt;&#x2F;groupId&gt;    &lt;artifactId&gt;mybatis-plus-boot-starter&lt;&#x2F;artifactId&gt;    &lt;version&gt;$&#123;mybatis-plus.ve">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Docker常用命令">
-<meta property="og:url" content="http://doushuo.github.io/2024/08/04/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:title" content="Mybatis-Plus中字段自动填充">
+<meta property="og:url" content="http://doushuo.github.io/2024/08/13/Mybatis-Plus%E8%87%AA%E5%8A%A8%E5%A1%AB%E5%85%85/index.html">
 <meta property="og:site_name" content="doushuo">
-<meta property="og:description" content="docker 常用123456789101112131415161718192021222324252627282930313233343536373839404142## 查看镜像docker images## 查询安装的镜像docker search name## 查看容器docker ps -a## 重启容器docker restart containerID## 停止docker stop">
+<meta property="og:description" content="SpringBoot 中配置字段填充 依赖  12345&lt;dependency&gt;    &lt;groupId&gt;com.baomidou&lt;&#x2F;groupId&gt;    &lt;artifactId&gt;mybatis-plus-boot-starter&lt;&#x2F;artifactId&gt;    &lt;version&gt;$&#123;mybatis-plus.ve">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-08-04T12:38:29.452Z">
-<meta property="article:modified_time" content="2024-08-05T12:46:44.347Z">
+<meta property="article:published_time" content="2024-08-13T13:49:47.231Z">
+<meta property="article:modified_time" content="2024-08-13T13:50:48.190Z">
 <meta property="article:author" content="doushuo">
-<meta property="article:tag" content="docker">
+<meta property="article:tag" content="mybatis-plus">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Docker常用命令 - doushuo</title>
+  <title>Mybatis-Plus中字段自动填充 - doushuo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Docker常用命令"></span>
+            <span id="subtitle" data-typed-text="Mybatis-Plus中字段自动填充"></span>
           
         </div>
 
@@ -211,8 +211,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-08-04 20:38" pubdate>
-          2024年8月4日 晚上
+        <time datetime="2024-08-13 21:49" pubdate>
+          2024年8月13日 晚上
         </time>
       </span>
     
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          168 字
+          159 字
         
       </span>
     
@@ -271,14 +271,25 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Docker常用命令</h1>
+            <h1 id="seo-header">Mybatis-Plus中字段自动填充</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="docker-常用"><a href="#docker-常用" class="headerlink" title="docker 常用"></a>docker 常用</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment">## 查看镜像</span><br>docker images<br><span class="hljs-comment">## 查询安装的镜像</span><br>docker search name<br><span class="hljs-comment">## 查看容器</span><br>docker ps -a<br><span class="hljs-comment">## 重启容器</span><br>docker restart containerID<br><span class="hljs-comment">## 停止</span><br>docker stop  containerID<br><span class="hljs-comment">## 启动</span><br>docker start containerID<br><span class="hljs-comment">## 删除</span><br>docker <span class="hljs-built_in">rm</span> containerID<br><span class="hljs-comment">## 删除镜像</span><br>docker rmi iamgeID<br><span class="hljs-comment">## 杀死</span><br>docker <span class="hljs-built_in">kill</span> containerID <br><br><span class="hljs-comment">## 启动镜像</span><br>docker run <br><span class="hljs-comment">## 进入容器</span><br>docker <span class="hljs-built_in">exec</span> containerID -it /bin/bash<br><span class="hljs-comment">## 退出容器</span><br><span class="hljs-built_in">exit</span><br><span class="hljs-comment">## 查看日志 -f 跟踪日志输出 -t显示时间戳 --tail 仅列出最新的n条容器日志</span><br>docker logs -f --<span class="hljs-built_in">tail</span>=1000 containerID<br><span class="hljs-comment">## 查看日志</span><br>docker logs --since=“2021-08-10” --<span class="hljs-built_in">tail</span>=10 redis<br><br><span class="hljs-comment">## 内存情况</span><br><span class="hljs-built_in">df</span> -lh<br>docker system <span class="hljs-built_in">df</span> -v <br><span class="hljs-comment">## 查看状态</span><br>docker status<br><span class="hljs-comment">## 复制容器文件</span><br>dcoker <span class="hljs-built_in">cp</span> 容器<span class="hljs-built_in">id</span>:容器内路径 目的主机路径<br><br><span class="hljs-comment">## 打包镜像</span><br>docker save -o 压缩文件名称：镜像名称：版本号<br><span class="hljs-comment">## 解压镜像</span><br>docker load -i  压缩文件名称<br></code></pre></td></tr></table></figure>
+                <h2 id="SpringBoot-中配置字段填充"><a href="#SpringBoot-中配置字段填充" class="headerlink" title="SpringBoot 中配置字段填充"></a>SpringBoot 中配置字段填充</h2><ol>
+<li>依赖</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.baomidou<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>mybatis-plus-boot-starter<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>$&#123;mybatis-plus.version&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
+<ol start="2">
+<li>实体类添加注解</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@TableField(fill = FieldFill.INSERT)</span> <span class="hljs-comment">//插入时填充字段</span><br><span class="hljs-keyword">private</span> Date createTime;<br><span class="hljs-meta">@TableField(fill = FieldFill.INSERT_UPDATE)</span><span class="hljs-comment">//插入和修改时填充字段</span><br><span class="hljs-keyword">private</span> Date updateTime;<br><br></code></pre></td></tr></table></figure>
 
+<ol start="3">
+<li>填充规则</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Slf4j</span><br><span class="hljs-meta">@Component</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyMetaObjectHandler</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">MetaObjectHandler</span> &#123;<br><br>    <span class="hljs-comment">//插入时的填充策略</span><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">insertFill</span><span class="hljs-params">(MetaObject metaObject)</span> &#123;<br>        log.info(<span class="hljs-string">&quot;start insert fill ....&quot;</span>);<br>        <span class="hljs-comment">//三个参数：字段名，字段值，元对象参数</span><br>        <span class="hljs-built_in">this</span>.setFieldValByName(<span class="hljs-string">&quot;createTime&quot;</span>,<span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(),metaObject);<br>        <span class="hljs-built_in">this</span>.setFieldValByName(<span class="hljs-string">&quot;updateTime&quot;</span>,<span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(),metaObject);<br>    &#125;<br>    <span class="hljs-comment">//修改时的填充策略</span><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">updateFill</span><span class="hljs-params">(MetaObject metaObject)</span> &#123;<br>        log.info(<span class="hljs-string">&quot;start update fill ....&quot;</span>);<br>        <span class="hljs-built_in">this</span>.setFieldValByName(<span class="hljs-string">&quot;updateTime&quot;</span>,<span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(),metaObject);<br>    &#125;<br>&#125;<br><br><br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -296,7 +307,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/docker/" class="category-chain-item">docker</a>
+  <a href="/categories/mybatis-plus/" class="category-chain-item">mybatis-plus</a>
   
   
 
@@ -311,7 +322,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/docker/" class="print-no-link">#docker</a>
+        <a href="/tags/mybatis-plus/" class="print-no-link">#mybatis-plus</a>
       
     </div>
   
@@ -323,8 +334,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Docker常用命令</div>
-      <div>http://doushuo.github.io/2024/08/04/docker常用命令/</div>
+      <div>Mybatis-Plus中字段自动填充</div>
+      <div>http://doushuo.github.io/2024/08/13/Mybatis-Plus自动填充/</div>
     </div>
     <div class="license-meta">
       
@@ -336,7 +347,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年8月4日</div>
+          <div>2024年8月13日</div>
         </div>
       
       
@@ -368,18 +379,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/08/13/Mybatis-Plus%E8%87%AA%E5%8A%A8%E5%A1%AB%E5%85%85/" title="Mybatis-Plus中字段自动填充">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Mybatis-Plus中字段自动填充</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/08/04/IDEA%E4%B8%ADGit%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/" title="IDEA中Git常用操作">
-                        <span class="hidden-mobile">IDEA中Git常用操作</span>
+                      <a href="/2024/08/04/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="Docker常用命令">
+                        <span class="hidden-mobile">Docker常用命令</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
